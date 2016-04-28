@@ -44,8 +44,7 @@ public class NeuralNetwork {
             Vector temp = x.dot(weights);
             out = function.value(temp);
             Vector error = y.minus(out);
-            Vector deriv = derivative.value(temp);
-            Vector delta = error.times(deriv);
+            Vector delta = error.times(derivative.value(temp));
             weights = weights.plus(x.transpose().dot(delta));
         }
         return out;
