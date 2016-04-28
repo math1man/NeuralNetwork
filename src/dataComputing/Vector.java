@@ -62,15 +62,6 @@ public class Vector {
         return asRowMatrix().transpose();
     }
 
-    public Vector map(Function function) {
-        double[] out = new double[length()];
-        for (int i=0; i<length(); i++) {
-            out[i] = function.value(vector[i]);
-        }
-        return new Vector(out);
-
-    }
-
     public static Vector gaussian(int length) {
         return gaussian(length, new Random());
     }
